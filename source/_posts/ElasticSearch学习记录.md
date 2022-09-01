@@ -52,7 +52,7 @@ Elasticsearch具备以下特点：
 
 ### 安装和配置
 
-https://chanservy.vercel.app/posts/20220611/elasticsearch-install.html
+https://chanservy.github.io/posts/20220611/elasticsearch-install.html
 
 #### 总结
 
@@ -6993,7 +6993,7 @@ public void testSubAgg(){
 
 ### 搭建ES集群
 
-参考：https://chanservy.vercel.app/posts/20220611/elasticsearch-install.html#%E9%83%A8%E7%BD%B2es%E9%9B%86%E7%BE%A4
+参考：https://chanservy.github.io/posts/20220611/elasticsearch-install.html#%E9%83%A8%E7%BD%B2es%E9%9B%86%E7%BE%A4
 
 
 

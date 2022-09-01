@@ -3794,5 +3794,5 @@ private static int inflationThreshold = 15;
 
 ## 内存模型
 
-内存模型内容详见 [JAVA并发：共享模型之内存](https://chanservy.vercel.app/posts/20211121/java-concurrent-3.html)
+内存模型内容详见 [JAVA并发：共享模型之内存](https://chanservy.github.io/posts/20211121/java-concurrent-3.html)
 

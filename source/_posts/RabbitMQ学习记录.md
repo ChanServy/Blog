@@ -6,7 +6,7 @@ tags: RabbitMQ
 urlname: rabbitmq-study
 ---
 
-# RabbitMQ-基础篇
+初级篇。
 
 ## 初识MQ
 
@@ -134,7 +134,7 @@ MQ，中文是消息队列（MessageQueue），字面来看就是存放消息的
 
 ### 安装RabbitMQ
 
-https://chanservy.vercel.app/posts/20220622/rabbitmq-install.html
+https://chanservy.github.io/posts/20220622/rabbitmq-install.html
 
 MQ的基本结构：
 
@@ -1149,7 +1149,7 @@ public MessageConverter messageConverter() {
 
 
 
-# 服务异步通信-高级篇
+高级篇。
 
 
 
@@ -1751,7 +1751,12 @@ public class RepublishMessageRecovererConfig {
 
 
 
-如果这个包含死信的队列配置了`dead-letter-exchange`属性，指定了一个交换机，那么队列中的死信就会投递到这个交换机中，而这个交换机称为**死信交换机**（Dead Letter Exchange，检查DLX）。
+如果这个包含死信的队列配置了`dead-letter-exchange`属性和`dead-letter-routingkey`属性，也就是说这个包含死信的队列指定了一个死信交换机，那么队列中的死信就会投递到这个交换机中，而这个交换机称为**死信交换机**（Dead Letter Exchange，检查DLX）。
+
+**队列将死信投递给死信交换机时，必须知道两个信息：**
+
+- 死信交换机名称
+- 死信交换机与死信队列绑定的RoutingKey
 
 
 
@@ -2161,7 +2166,7 @@ public R testSendTTLMsgToQueue() {
 
 #### 安装DelayExchange插件
 
-https://chanservy.vercel.app/posts/20220622/rabbitmq-install.html
+https://chanservy.github.io/posts/20220622/rabbitmq-install.html
 
 #### DelayExchange原理
 
@@ -2381,7 +2386,7 @@ RabbitMQ的是基于Erlang语言编写，而Erlang又是一个面向并发的语
 
 #### 部署
 
-https://chanservy.vercel.app/posts/20220622/rabbitmq-install.html
+https://chanservy.github.io/posts/20220622/rabbitmq-install.html
 
 
 
@@ -2409,7 +2414,7 @@ https://chanservy.vercel.app/posts/20220622/rabbitmq-install.html
 
 #### 部署
 
-https://chanservy.vercel.app/posts/20220622/rabbitmq-install.html
+https://chanservy.github.io/posts/20220622/rabbitmq-install.html
 
 
 
@@ -2429,7 +2434,7 @@ https://chanservy.vercel.app/posts/20220622/rabbitmq-install.html
 
 #### 部署
 
-https://chanservy.vercel.app/posts/20220622/rabbitmq-install.html
+https://chanservy.github.io/posts/20220622/rabbitmq-install.html
 
 
 

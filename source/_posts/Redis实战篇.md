@@ -1873,7 +1873,7 @@ public void testRedisson() throws InterruptedException {
 
 其实 Redisson 可重入的原理和 ReentrantLock 的可重入原理是一样的。可以看看 ReentrantLock 的可重入原理源码解析：
 
-[ReentrantLock 的可重入原理](https://chanservy.vercel.app/posts/20211124/java-concurrent-6.html#%E5%8F%AF%E9%87%8D%E5%85%A5%E5%8E%9F%E7%90%86)
+[ReentrantLock 的可重入原理](https://chanservy.github.io/posts/20211124/java-concurrent-6.html#%E5%8F%AF%E9%87%8D%E5%85%A5%E5%8E%9F%E7%90%86)
 
 在 ReentrantLock 中，加锁时，如果发现 state 不为 0，并且 owner 是当前线程的话，就代表锁重入，让 state 自增；解锁时，让 state 自减，直到减为 0，才真正解开。所以在 Redisson 的分布式锁的可重入实现中也有一个计数，用来表示当前线程获取了几次分布式锁。前面我们自己实现的 Redis 分布式锁使用的是 String 类型的 value，但是 Redisson 的分布式锁中不仅要记录锁的线程标识还要记录重入的数值。因此，显而易见，在 Redisson 分布式锁的底层使用的是 redis 的 hash 类型的 value。
 
@@ -2116,7 +2116,7 @@ lock.unlock();
 
 ##### 读写锁（ReadWriteLock）
 
-对比 JUC 中的读写锁：[ReadWriteLock](https://chanservy.vercel.app/posts/20211124/java-concurrent-6.html#%E8%AF%BB%E5%86%99%E9%94%81)
+对比 JUC 中的读写锁：[ReadWriteLock](https://chanservy.github.io/posts/20211124/java-concurrent-6.html#%E8%AF%BB%E5%86%99%E9%94%81)
 
 基于Redis的Redisson分布式可重入读写锁[`RReadWriteLock`](http://static.javadoc.io/org.redisson/redisson/3.4.3/org/redisson/api/RReadWriteLock.html) Java对象实现了`java.util.concurrent.locks.ReadWriteLock`接口。其中读锁和写锁都继承了[RLock](https://github.com/redisson/redisson/wiki/8.-分布式锁和同步器#81-可重入锁reentrant-lock)接口。
 
@@ -2204,7 +2204,7 @@ public String write() {
 
 ##### 信号量（Semaphore）
 
-对比 JUC 中的信号量：[Semaphore](https://chanservy.vercel.app/posts/20211124/java-concurrent-6.html#Semaphore)
+对比 JUC 中的信号量：[Semaphore](https://chanservy.github.io/posts/20211124/java-concurrent-6.html#Semaphore)
 
 基于Redis的Redisson的分布式信号量（[Semaphore](http://static.javadoc.io/org.redisson/redisson/3.10.0/org/redisson/api/RSemaphore.html)）Java对象`RSemaphore`采用了与`java.util.concurrent.Semaphore`相似的接口和用法。同时还提供了[异步（Async）](http://static.javadoc.io/org.redisson/redisson/3.10.0/org/redisson/api/RSemaphoreAsync.html)、[反射式（Reactive）](http://static.javadoc.io/org.redisson/redisson/3.10.0/org/redisson/api/RSemaphoreReactive.html)和[RxJava2标准](http://static.javadoc.io/org.redisson/redisson/3.10.0/org/redisson/api/RSemaphoreRx.html)的接口。
 
@@ -2279,7 +2279,7 @@ semaphore.release(permitId);
 
 Redisson 的 CountDownLatch 和 JUC 中的思想是一样的，只不过一个是单体应用中，一个是分布式场景下。
 
-对比 JUC 中的 CountDownLatch：[CountDownLatch](https://chanservy.vercel.app/posts/20211124/java-concurrent-6.html#CountdownLatch)
+对比 JUC 中的 CountDownLatch：[CountDownLatch](https://chanservy.github.io/posts/20211124/java-concurrent-6.html#CountdownLatch)
 
 ```java
 RCountDownLatch latch = redisson.getCountDownLatch("anyCountDownLatch");
